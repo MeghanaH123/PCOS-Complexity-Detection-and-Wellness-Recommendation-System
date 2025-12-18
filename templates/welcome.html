@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('{{ url_for('static', filename='pretty but not in my room.jpeg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden; /* Prevents scrollbars if the image is very large */
+        }
+        .container-bg {
+             background-color: #ffffff; /* Solid white container */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="container-bg p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-t-4 border-blue-500">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to the PCOS Predictor</h1>
+        <p class="text-gray-600 mb-8">
+            This application uses advanced machine learning models to help predict Polycystic Ovary Syndrome (PCOS) based on clinical data and ultrasound images.
+        </p>
+        <a href="{{ url_for('home') }}" class="inline-block bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 duration-300 ease-in-out">
+            Start
+        </a>
+    </div>
+</body>
+</html>
